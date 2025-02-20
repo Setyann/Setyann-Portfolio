@@ -1,0 +1,16 @@
+body {
+  background: #333;
+  color: #fff;
+}
+
+.titles {
+  text-align: center;
+}
+
+.cards {
+  margin-bottom: 27px;
+}
+
+.mar-10 {
+  margin: 10px
+}
