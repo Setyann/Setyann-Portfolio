@@ -10,12 +10,8 @@ portfolio/
 ├── css/
 │   └── styles.css         # Main styles (18KB, optimized with smooth transitions)
 ├── js/
-│   ├── main.js            # Application entry point
-│   └── modules/
-│       ├── dom.js         # DOM helper functions
-│       ├── navigation.js  # Navigation and menu
-│       ├── projects.js    # Projects section
-│       └── skills.js      # Skills section
+│   └── main.js            # Application entry point
+├── favicon.ico            # Favicon
 └── README.md              # Documentation (this file)
 ```
 
