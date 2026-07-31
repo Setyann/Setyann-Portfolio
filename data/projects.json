@@ -22,11 +22,9 @@
         "description": "Secure communication platform built around privacy, transparency and user control.",
         "stack": [
             "Kotlin",
-            "Jetpack Compose",
-            "Ktor",
-            "PostgreSQL",
-            "WebSocket",
-            "Signal Protocol"
+            "Android",
+            "SQL",
+            "WebSocket"
         ],
         "status": "Planned",
         "private": true,
