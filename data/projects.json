@@ -1,0 +1,19 @@
+[
+    {
+        "title": "Pulse",
+        "subtitle": "Your music. Your way.",
+        "description": "Android offline music player application.",
+        "stack": [
+            "Java",
+            "Android",
+            "ExoPlayer"
+        ],
+        "status": "Released",
+        "private": true,
+        "links": {
+            "demo": "",
+            "github": "https://github.com/Setyann/Pulse",
+            "apk": "https://github.com/Setyann/Pulse/releases/download/v1.0.0/Pulse-v1.0.0.apk"
+        }
+    }
+]

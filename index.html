@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Setyann">
+    <meta name="description" content="Portfolio of Setyann - Web & Android Developer">
+
+    <title translate="no">Setyann</title>
+
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header class="header">
+
+        <a href="#" class="logo" translate="no">
+            Setyann
+        </a>
+
+        <nav class="navbar">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#footer">Contact</a>
+        </nav>
+
+        <button class="menu-toggle" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <h1>
+                Hi, I'm<span translate="no"> Setyann</span>
+            </h1>
+            <h2>
+                I am a
+                <span id="role" translate="no"></span>
+            </h2>
+            <p>
+                Developer focused on web applications,
+                mobile software and digital systems.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#footer" class="btn btn-secondary">Contact</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="about-content">
+                <div class="about-stats">
+
+                    <div class="stat-card">
+                        <h3>3+</h3>
+                        <p>Years Learning</p>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <h3>5+</h3>
+                        <p>Projects</p>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <h3>3</h3>
+                        <p>Main Fields</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="terminal" translate="no">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <p>Terminal</p>
+                </div>
+
+
+                <div class="terminal-body">
+                    <div id="terminal-output"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="title">Projects</h2>
+
+            <div class="projects-content" id="projects-container"></div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-info">
+                <h2>Let's connect.</h2>
+                <p>Have a project or idea? Get in touch.</p>
+            </div>
+
+            <div class="footer-links">
+
+                <a href="https://github.com/Setyann" target="_blank" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://t.me/Setyann" target="_blank" aria-label="Telegram">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+
+                <a href="mailto:aram.setyan1@gmail.com" target="_blank" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span translate="no">&copy 2026 Setyann</span>
+            <span>Built with HTML · CSS · JavaScript</span>
+        </div>
+
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
