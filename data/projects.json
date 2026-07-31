@@ -15,5 +15,25 @@
             "github": "https://github.com/Setyann/Pulse",
             "apk": "https://github.com/Setyann/Pulse/releases/download/v1.0.0/Pulse-v1.0.0.apk"
         }
+    },
+    {
+        "title": "Custel",
+        "subtitle": "Private communication. Protected by design.",
+        "description": "Secure communication platform built around privacy, transparency and user control.",
+        "stack": [
+            "Kotlin",
+            "Jetpack Compose",
+            "Ktor",
+            "PostgreSQL",
+            "WebSocket",
+            "Signal Protocol"
+        ],
+        "status": "Planned",
+        "private": true,
+        "links": {
+            "demo": "",
+            "github": "",
+            "apk": ""
+        }
     }
 ]
