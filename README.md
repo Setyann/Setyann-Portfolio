@@ -31,13 +31,6 @@ The website focuses on a clean developer-oriented design with a minimal interfac
 - JavaScript
 - JSON
 
-## Projects
-
-The portfolio includes my personal development projects:
-
-- **NoxGram** — Android messenger application with authentication and local database.
-- **Pulse** — Android offline music player application.
-
 ## Design
 
 The design uses a dark developer-style interface with:
