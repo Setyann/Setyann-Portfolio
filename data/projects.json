@@ -26,11 +26,11 @@
             "SQL",
             "WebSocket"
         ],
-        "status": "Planned",
+        "status": "Development",
         "private": true,
         "links": {
             "demo": "",
-            "github": "",
+            "github": "https://github.com/Setyann/Custel/",
             "apk": ""
         }
     }
