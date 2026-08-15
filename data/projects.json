@@ -26,7 +26,7 @@
             "SQL",
             "WebSocket"
         ],
-        "status": "Paused",
+        "status": "Development",
         "private": true,
         "links": {
             "demo": "",
