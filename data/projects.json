@@ -26,11 +26,28 @@
             "SQL",
             "WebSocket"
         ],
-        "status": "Development",
+        "status": "Paused",
         "private": true,
         "links": {
             "demo": "",
             "github": "https://github.com/Setyann/Custel/",
+            "apk": ""
+        }
+    },
+    {
+        "title": "LUME",
+        "subtitle": "A taste worth remembering.",
+        "description": "Modern restaurant website template designed for showcasing a menu, atmosphere, popular dishes, and contact information.",
+        "stack": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "status": "Development",
+        "private": true,
+        "links": {
+            "demo": "",
+            "github": "",
             "apk": ""
         }
     }
