@@ -35,7 +35,7 @@
         }
     },
     {
-        "title": "LUME",
+        "title": "ARVESSO",
         "subtitle": "A taste worth remembering.",
         "description": "Modern restaurant website template designed for showcasing a menu, atmosphere, popular dishes, and contact information.",
         "stack": [
@@ -43,11 +43,11 @@
             "CSS",
             "JavaScript"
         ],
-        "status": "Development",
+        "status": "Released",
         "private": true,
         "links": {
-            "demo": "",
-            "github": "",
+            "demo": "setyann.github.io/ARVESSO/",
+            "github": "https://github.com/Setyann/ARVESSO",
             "apk": ""
         }
     }
