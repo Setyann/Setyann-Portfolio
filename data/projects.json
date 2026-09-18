@@ -50,5 +50,22 @@
             "github": "https://github.com/Setyann/ARVESSO",
             "apk": ""
         }
+    },
+    {
+        "title": "VEYRA",
+        "subtitle": "Care, clearly explained.",
+        "description": "Modern dental clinic website designed for showcasing services, doctors, pricing, locations, and online appointment booking.",
+        "stack": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "status": "Released",
+        "private": true,
+        "links": {
+            "demo": "https://setyann.github.io/VEYRA/",
+            "github": "https://github.com/Setyann/VEYRA",
+            "apk": ""
+        }
     }
 ]
