@@ -60,7 +60,7 @@
             "ExoPlayer"
         ],
         "status": "Released",
-        "private": false,
+        "private": true,
         "links": {
             "demo": "",
             "github": "https://github.com/Setyann/Pulse",
@@ -78,7 +78,7 @@
             "WebSocket"
         ],
         "status": "Paused",
-        "private": false,
+        "private": true,
         "links": {
             "demo": "",
             "github": "https://github.com/Setyann/Custel/",
