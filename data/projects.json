@@ -1,40 +1,5 @@
 [
     {
-        "title": "Pulse",
-        "subtitle": "Your music. Your way.",
-        "description": "Android offline music player application.",
-        "stack": [
-            "Kotlin",
-            "Android",
-            "ExoPlayer"
-        ],
-        "status": "Released",
-        "private": true,
-        "links": {
-            "demo": "",
-            "github": "https://github.com/Setyann/Pulse",
-            "apk": "https://github.com/Setyann/Pulse/releases/download/v1.1.1/pulse-v1.1.1.apk"
-        }
-    },
-    {
-        "title": "Custel",
-        "subtitle": "Private communication. Secured by design.",
-        "description": "Secure communication platform built around privacy, transparency and user control.",
-        "stack": [
-            "Kotlin",
-            "Android",
-            "SQL",
-            "WebSocket"
-        ],
-        "status": "Paused",
-        "private": true,
-        "links": {
-            "demo": "",
-            "github": "https://github.com/Setyann/Custel/",
-            "apk": ""
-        }
-    },
-    {
         "title": "ARVESSO",
         "subtitle": "A taste worth remembering.",
         "description": "Modern restaurant website template designed for showcasing a menu, atmosphere, popular dishes, and contact information.",
@@ -82,6 +47,41 @@
         "links": {
             "demo": "https://setyann.github.io/TAVREN/",
             "github": "https://github.com/Setyann/TAVREN",
+            "apk": ""
+        }
+    },
+    {
+        "title": "Pulse",
+        "subtitle": "Your music. Your way.",
+        "description": "Android offline music player application.",
+        "stack": [
+            "Kotlin",
+            "Android",
+            "ExoPlayer"
+        ],
+        "status": "Released",
+        "private": true,
+        "links": {
+            "demo": "",
+            "github": "https://github.com/Setyann/Pulse",
+            "apk": "https://github.com/Setyann/Pulse/releases/download/v1.1.1/pulse-v1.1.1.apk"
+        }
+    },
+    {
+        "title": "Custel",
+        "subtitle": "Private communication. Secured by design.",
+        "description": "Secure communication platform built around privacy, transparency and user control.",
+        "stack": [
+            "Kotlin",
+            "Android",
+            "SQL",
+            "WebSocket"
+        ],
+        "status": "Paused",
+        "private": true,
+        "links": {
+            "demo": "",
+            "github": "https://github.com/Setyann/Custel/",
             "apk": ""
         }
     }
