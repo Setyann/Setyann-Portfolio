@@ -2,14 +2,14 @@
     {
         "title": "ARVESSO",
         "subtitle": "A taste worth remembering.",
-        "description": "Modern restaurant website template designed for showcasing a menu, atmosphere, popular dishes, and contact information.",
+        "description": "Fictional restaurant website concept featuring a structured menu, atmosphere-focused presentation, locations, contact information, and a responsive customer experience.",
         "stack": [
             "HTML",
             "CSS",
             "JavaScript"
         ],
         "status": "Released",
-        "private": true,
+        "private": false,
         "links": {
             "demo": "https://setyann.github.io/ARVESSO/",
             "github": "https://github.com/Setyann/ARVESSO",
@@ -19,14 +19,14 @@
     {
         "title": "VEYRA",
         "subtitle": "Care, clearly explained.",
-        "description": "Modern dental clinic website designed for showcasing services, doctors, pricing, locations, and online appointment booking.",
+        "description": "Fictional dental clinic website concept featuring services, doctors, pricing, locations, and an interactive appointment booking experience.",
         "stack": [
             "HTML",
             "CSS",
             "JavaScript"
         ],
         "status": "Released",
-        "private": true,
+        "private": false,
         "links": {
             "demo": "https://setyann.github.io/VEYRA/",
             "github": "https://github.com/Setyann/VEYRA",
@@ -36,14 +36,14 @@
     {
         "title": "TAVREN",
         "subtitle": "Beauty, booked around you.",
-        "description": "Modern beauty studio website designed for showcasing services, specialists, pricing, portfolio work, locations, and interactive online appointment booking.",
+        "description": "Fictional beauty studio website concept featuring services, specialists, pricing, portfolio work, multiple locations, and an interactive appointment booking flow.",
         "stack": [
             "HTML",
             "CSS",
             "JavaScript"
         ],
         "status": "Released",
-        "private": true,
+        "private": false,
         "links": {
             "demo": "https://setyann.github.io/TAVREN/",
             "github": "https://github.com/Setyann/TAVREN",
@@ -53,14 +53,14 @@
     {
         "title": "Pulse",
         "subtitle": "Your music. Your way.",
-        "description": "Android offline music player application.",
+        "description": "Offline Android music player built for local playback and a simple, focused listening experience.",
         "stack": [
             "Kotlin",
             "Android",
             "ExoPlayer"
         ],
         "status": "Released",
-        "private": true,
+        "private": false,
         "links": {
             "demo": "",
             "github": "https://github.com/Setyann/Pulse",
@@ -70,7 +70,7 @@
     {
         "title": "Custel",
         "subtitle": "Private communication. Secured by design.",
-        "description": "Secure communication platform built around privacy, transparency and user control.",
+        "description": "Secure communication platform focused on privacy, transparency, user control, and real-time messaging.",
         "stack": [
             "Kotlin",
             "Android",
@@ -78,7 +78,7 @@
             "WebSocket"
         ],
         "status": "Paused",
-        "private": true,
+        "private": false,
         "links": {
             "demo": "",
             "github": "https://github.com/Setyann/Custel/",
