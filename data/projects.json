@@ -67,5 +67,22 @@
             "github": "https://github.com/Setyann/VEYRA",
             "apk": ""
         }
+    },
+    {
+        "title": "TAVREN",
+        "subtitle": "Beauty, booked around you.",
+        "description": "Modern beauty studio website designed for showcasing services, specialists, pricing, portfolio work, locations, and interactive online appointment booking.",
+        "stack": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "status": "Released",
+        "private": true,
+        "links": {
+            "demo": "https://setyann.github.io/TAVREN/",
+            "github": "https://github.com/Setyann/TAVREN",
+            "apk": ""
+        }
     }
 ]
