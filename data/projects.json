@@ -51,6 +51,23 @@
         }
     },
     {
+        "title": "TOVENI",
+        "subtitle": "Made to fit real rooms.",
+        "description": "Fictional furniture brand website concept featuring a responsive product catalog, configurable furniture, dynamic pricing, favorites, inquiry flows, custom furniture requests, showroom information, and B2B services.",
+        "stack": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "status": "Released",
+        "private": false,
+        "links": {
+            "demo": "https://setyann.github.io/TOVENI/",
+            "github": "https://github.com/Setyann/TOVENI",
+            "apk": ""
+        }
+    },
+    {
         "title": "Pulse",
         "subtitle": "Your music. Your way.",
         "description": "Offline Android music player built for local playback and a simple, focused listening experience.",
