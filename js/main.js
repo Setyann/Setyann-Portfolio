@@ -221,8 +221,10 @@ function createProjectCard(project, projectIndex) {
             }
         }[name] || name;
 
+        const target = name === "apk" ? "_self" : "_blank";
+
         links += `
-            <a href="${url}" target="_blank" rel="noopener noreferrer">
+            <a href="${url}" target="${target}" rel="noopener noreferrer">
                 <i class="${linkData.icon}"></i> ${linkData.label}
             </a>
         `;

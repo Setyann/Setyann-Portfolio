@@ -88,24 +88,5 @@
             "github": "https://github.com/Setyann/Pulse",
             "apk": "https://github.com/Setyann/Pulse/releases/download/v1.1.1/pulse-v1.1.1.apk"
         }
-    },
-    {
-        "title": "Custel",
-        "category": "mobile",
-        "subtitle": "Private communication. Secured by design.",
-        "description": "Secure communication platform focused on privacy, transparency, user control, and real-time messaging.",
-        "stack": [
-            "Kotlin",
-            "Android",
-            "SQL",
-            "WebSocket"
-        ],
-        "status": "Paused",
-        "private": true,
-        "links": {
-            "demo": "",
-            "github": "https://github.com/Setyann/Custel/",
-            "apk": ""
-        }
     }
 ]
