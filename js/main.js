@@ -392,13 +392,9 @@ filterButtons.forEach(button => {
 
 loadProjects();
 
-changeRole();
-
 runTerminal();
 
 loadTestimonials();
-
-setInterval(changeRole, 2500);
 
 menuButton.addEventListener("click", () => {
     navbar.classList.toggle("active");
