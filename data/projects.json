@@ -1,6 +1,7 @@
 [
     {
         "title": "ARVESSO",
+        "category": "web",
         "subtitle": "A taste worth remembering.",
         "description": "Fictional restaurant website concept featuring a structured menu, atmosphere-focused presentation, locations, contact information, and a responsive customer experience.",
         "stack": [
@@ -18,6 +19,7 @@
     },
     {
         "title": "VEYRA",
+        "category": "web",
         "subtitle": "Care, clearly explained.",
         "description": "Fictional dental clinic website concept featuring services, doctors, pricing, locations, and an interactive appointment booking experience.",
         "stack": [
@@ -35,6 +37,7 @@
     },
     {
         "title": "TAVREN",
+        "category": "web",
         "subtitle": "Beauty, booked around you.",
         "description": "Fictional beauty studio website concept featuring services, specialists, pricing, portfolio work, multiple locations, and an interactive appointment booking flow.",
         "stack": [
@@ -52,6 +55,7 @@
     },
     {
         "title": "TOVENI",
+        "category": "web",
         "subtitle": "Made to fit real rooms.",
         "description": "Fictional furniture brand website concept featuring a responsive product catalog, configurable furniture, dynamic pricing, favorites, inquiry flows, custom furniture requests, showroom information, and B2B services.",
         "stack": [
@@ -69,6 +73,7 @@
     },
     {
         "title": "Pulse",
+        "category": "mobile",
         "subtitle": "Your music. Your way.",
         "description": "Offline Android music player built for local playback and a simple, focused listening experience.",
         "stack": [
@@ -86,6 +91,7 @@
     },
     {
         "title": "Custel",
+        "category": "mobile",
         "subtitle": "Private communication. Secured by design.",
         "description": "Secure communication platform focused on privacy, transparency, user control, and real-time messaging.",
         "stack": [

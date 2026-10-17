@@ -3,6 +3,7 @@ const navbar = document.querySelector(".navbar");
 const roleElement = document.getElementById("role");
 const terminal = document.getElementById("terminal-output");
 const projectsContainer = document.getElementById("projects-container");
+const filterButtons = document.querySelectorAll(".filter-btn");
 
 const roles = [
     "Web Developer",
@@ -61,6 +62,8 @@ const commands = [
     }
 ];
 
+let allProjects = [];
+let activeFilter = "all";
 let roleIndex = 0;
 let commandIndex = 0;
 
@@ -270,26 +273,50 @@ function createProjectCard(project, projectIndex) {
     projectsContainer.appendChild(card);
 }
 
+function renderProjects() {
+    projectsContainer.innerHTML = "";
+
+    const filteredProjects = allProjects.filter(project => {
+        return activeFilter === "all" ||
+               project.category === activeFilter;
+    });
+
+    filteredProjects.forEach((project, index) => {
+        createProjectCard(project, index);
+    });
+}
+
 async function loadProjects() {
-
     try {
-
         const response = await fetch("data/projects.json");
 
-        const projects = await response.json();
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
 
-        projects.forEach((project, index) => {
-            createProjectCard(project, index);
-        });
+        allProjects = await response.json();
+
+        renderProjects();
 
     } catch (error) {
-
         console.error("Failed to load projects:", error);
-
     }
 }
 
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        activeFilter = button.dataset.filter;
 
+        filterButtons.forEach(btn => {
+            const isActive = btn === button;
+
+            btn.classList.toggle("active", isActive);
+            btn.setAttribute("aria-pressed", String(isActive));
+        });
+
+        renderProjects();
+    });
+});
 
 loadProjects();
 
