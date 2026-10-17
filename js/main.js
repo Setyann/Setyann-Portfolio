@@ -4,6 +4,8 @@ const roleElement = document.getElementById("role");
 const terminal = document.getElementById("terminal-output");
 const projectsContainer = document.getElementById("projects-container");
 const filterButtons = document.querySelectorAll(".filter-btn");
+const testimonialsSection = document.getElementById("testimonials");
+const testimonialsContainer = document.getElementById("testimonials-container");
 
 const roles = [
     "Web Developer",
@@ -303,6 +305,76 @@ async function loadProjects() {
     }
 }
 
+function createTestimonialCard(testimonial) {
+    const card = document.createElement("article");
+    card.className = "testimonial-card";
+
+    const quote = document.createElement("blockquote");
+    quote.className = "testimonial-quote";
+    quote.textContent = testimonial.text;
+
+    const author = document.createElement("div");
+    author.className = "testimonial-author";
+
+    const name = document.createElement("h3");
+    name.textContent = testimonial.name;
+
+    const role = document.createElement("p");
+    role.textContent = testimonial.role || "";
+
+    author.append(name, role);
+    card.append(quote, author);
+
+    return card;
+}
+
+async function loadTestimonials() {
+    if (!testimonialsSection || !testimonialsContainer) {
+        return;
+    }
+
+    try {
+        const response = await fetch("data/testimonials.json");
+
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+
+        const testimonials = await response.json();
+
+        if (!Array.isArray(testimonials)) {
+            throw new Error("Testimonials data must be an array");
+        }
+
+        const publishedTestimonials = testimonials.filter(item =>
+            item.published === true &&
+            typeof item.text === "string" &&
+            item.text.trim() &&
+            typeof item.name === "string" &&
+            item.name.trim()
+        );
+
+        testimonialsContainer.replaceChildren();
+
+        if (publishedTestimonials.length === 0) {
+            testimonialsSection.hidden = true;
+            return;
+        }
+
+        publishedTestimonials.forEach(testimonial => {
+            testimonialsContainer.appendChild(
+                createTestimonialCard(testimonial)
+            );
+        });
+
+        testimonialsSection.hidden = false;
+
+    } catch (error) {
+        testimonialsSection.hidden = true;
+        console.error("Failed to load testimonials:", error);
+    }
+}
+
 filterButtons.forEach(button => {
     button.addEventListener("click", () => {
         activeFilter = button.dataset.filter;
@@ -323,6 +395,8 @@ loadProjects();
 changeRole();
 
 runTerminal();
+
+loadTestimonials();
 
 setInterval(changeRole, 2500);
 
