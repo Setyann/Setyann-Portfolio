@@ -519,20 +519,32 @@ body {
     background: currentColor;
 }
 
-.project-status.released {
-    color: var(--accent);
+.project-status.concept {
+    color: #A78BFA;
 }
 
 .project-status.development {
     color: #F59E0B;
 }
 
-.project-status.planned {
-    color: #60A5FA;
+.project-status.testing {
+    color: #38BDF8;
+}
+
+.project-status.released {
+    color: var(--accent);
 }
 
 .project-status.paused {
     color: #94A3B8;
+}
+
+.project-status.archived {
+    color: #64748B;
+}
+
+.project-status.maintained {
+    color: #4ADE80;
 }
 
 .project-title {
