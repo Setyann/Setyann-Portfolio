@@ -192,6 +192,67 @@ function getStatusClass(status) {
         .replace(/\s+/g, "-");
 }
 
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, char => {
+        const entities = {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+        };
+
+        return entities[char];
+    });
+}
+
+function getSafeURL(value) {
+    if (typeof value !== "string") {
+        return null;
+    }
+
+    try {
+        const url = new URL(value, window.location.href);
+
+        if (url.protocol !== "https:" && url.protocol !== "http:") {
+            return null;
+        }
+
+        return escapeHTML(url.href);
+    } catch (error) {
+        return null;
+    }
+}
+
+function isValidProject(project) {
+    return (
+        project !== null &&
+        typeof project === "object" &&
+        !Array.isArray(project) &&
+        typeof project.title === "string" &&
+        project.title.trim() !== "" &&
+        typeof project.subtitle === "string" &&
+        typeof project.description === "string" &&
+        typeof project.category === "string" &&
+        ["web", "mobile"].includes(project.category) &&
+        typeof project.status === "string" &&
+        [
+            "Concept",
+            "Development",
+            "Testing",
+            "Released",
+            "Paused",
+            "Archived",
+            "Maintained"
+        ].includes(project.status) &&
+        Array.isArray(project.stack) &&
+        project.stack.every(item => typeof item === "string") &&
+        project.links !== null &&
+        typeof project.links === "object" &&
+        !Array.isArray(project.links)
+    );
+}
+
 function createProjectCard(project, projectIndex) {
 
     const card = document.createElement("article");
@@ -199,12 +260,24 @@ function createProjectCard(project, projectIndex) {
     card.className = "project-card";
 
     const statusClass = getStatusClass(project.status);
+    const safeTitle = escapeHTML(project.title);
+    const safeSubtitle = escapeHTML(project.subtitle);
+    const safeDescription = escapeHTML(project.description);
+    const safeStatus = escapeHTML(project.status);
 
     let links = "";
 
-    for (const [name, url] of Object.entries(project.links)) {
+    const projectLinks =
+        project.links &&
+        typeof project.links === "object" &&
+        !Array.isArray(project.links)
+            ? project.links
+            : {};
 
-        if (!url) continue;
+    for (const [name, url] of Object.entries(projectLinks)) {
+        const safeURL = getSafeURL(url);
+
+        if (!safeURL) continue;
 
         const linkData = {
             demo: {
@@ -219,19 +292,21 @@ function createProjectCard(project, projectIndex) {
                 label: "APK",
                 icon: "fa-solid fa-download"
             }
-        }[name] || name;
+        }[name];
+
+        if (!linkData) continue;
 
         const target = name === "apk" ? "_self" : "_blank";
 
         links += `
-            <a href="${url}" target="${target}" rel="noopener noreferrer">
+            <a href="${safeURL}" target="${target}" rel="noopener noreferrer">
                 <i class="${linkData.icon}"></i> ${linkData.label}
             </a>
         `;
     }
 
-    const stack = project.stack
-        .map(item => `<span>${item}</span>`)
+    const stack = (Array.isArray(project.stack) ? project.stack : [])
+        .map(item => `<span>${escapeHTML(item)}</span>`)
         .join("");
 
     card.innerHTML = `
@@ -239,8 +314,8 @@ function createProjectCard(project, projectIndex) {
             <span class="project-number"></span>
 
             <div class="project-preview-content">
-                <h3 translate="no">${project.title}</h3>
-                <span>${project.subtitle}</span>
+                <h3 translate="no">${safeTitle}</h3>
+                <span>${safeSubtitle}</span>
             </div>
 
             <div class="project-preview-line"></div>
@@ -249,15 +324,15 @@ function createProjectCard(project, projectIndex) {
         <div class="project-info">
 
             <div class="project-status ${statusClass}">
-                ${project.status}
+                ${safeStatus}
             </div>
 
             <h3 class="project-title" translate="no">
-                ${project.title}
+                ${safeTitle}
             </h3>
 
             <p class="project-description">
-                ${project.description}
+                ${safeDescription}
             </p>
 
             <div class="project-stack" translate="no">
@@ -285,12 +360,23 @@ function renderProjects() {
                project.category === activeFilter;
     });
 
+    if (filteredProjects.length === 0) {
+        projectsContainer.textContent =
+            allProjects.length === 0
+                ? "No projects available yet."
+                : "No projects in this category yet.";
+
+        return;
+    }
+
     filteredProjects.forEach((project, index) => {
         createProjectCard(project, index);
     });
 }
 
 async function loadProjects() {
+    projectsContainer.textContent = "Loading projects...";
+
     try {
         const response = await fetch("data/projects.json");
 
@@ -298,12 +384,30 @@ async function loadProjects() {
             throw new Error(`HTTP error: ${response.status}`);
         }
 
-        allProjects = await response.json();
+        const projects = await response.json();
 
+        if (!Array.isArray(projects)) {
+            throw new Error("Projects data must be an array");
+        }
+
+        const invalidCount = projects.filter(
+            project => !isValidProject(project)
+        ).length;
+
+        if (invalidCount > 0) {
+            console.warn(
+                `Skipped ${invalidCount} invalid project record(s).`
+            );
+        }
+
+        allProjects = projects.filter(isValidProject);
         renderProjects();
 
     } catch (error) {
         console.error("Failed to load projects:", error);
+
+        projectsContainer.textContent =
+            "Unable to load projects. Please refresh the page and try again.";
     }
 }
 
