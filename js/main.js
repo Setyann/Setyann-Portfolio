@@ -7,15 +7,6 @@ const filterButtons = document.querySelectorAll(".filter-btn");
 const testimonialsSection = document.getElementById("testimonials");
 const testimonialsContainer = document.getElementById("testimonials-container");
 
-const roles = [
-    "Web Developer",
-    "App Developer",
-    "Automation & Bot Developer",
-    "Cybersecurity Enthusiast",
-    "IT Infrastructure",
-    "Software Architecture"
-];
-
 const commands = [
     {
         command: "whoami",
@@ -66,7 +57,6 @@ const commands = [
 
 let allProjects = [];
 let activeFilter = "all";
-let roleIndex = 0;
 let commandIndex = 0;
 
 
@@ -98,6 +88,7 @@ async function typeCommand(command) {
     );
 
     terminal.appendChild(line);
+    terminal.scrollTop = terminal.scrollHeight;
 
     // ждём перед вводом
     if (command === "clear") {
@@ -167,25 +158,6 @@ async function runTerminal() {
 
 }
 
-function changeRole() {
-
-    roleElement.style.opacity = 0;
-
-    setTimeout(() => {
-
-        roleElement.textContent = roles[roleIndex];
-
-        roleElement.style.opacity = 1;
-
-        roleIndex++;
-
-        if (roleIndex >= roles.length) {
-            roleIndex = 0;
-        }
-
-    }, 300);
-}
-
 function getStatusClass(status) {
     return status
         .toLowerCase()
@@ -253,7 +225,7 @@ function isValidProject(project) {
     );
 }
 
-function createProjectCard(project, projectIndex) {
+function createProjectCard(project) {
 
     const card = document.createElement("article");
 
@@ -309,45 +281,24 @@ function createProjectCard(project, projectIndex) {
         .map(item => `<span>${escapeHTML(item)}</span>`)
         .join("");
 
+    const kindLabel = project.category === "web" ? "Web" : "Mobile";
+    const kind = project.kind === "concept" ? `${kindLabel} · Demo concept` : kindLabel;
+
+    card.dataset.reveal = "";
     card.innerHTML = `
-        <div class="project-preview">
-            <span class="project-number"></span>
-
-            <div class="project-preview-content">
-                <h3 translate="no">${safeTitle}</h3>
-                <span>${safeSubtitle}</span>
-            </div>
-
-            <div class="project-preview-line"></div>
-        </div>
-
+        <div class="project-preview">${window.makePreview(project.title, project.category)}</div>
         <div class="project-info">
-
-            <div class="project-status ${statusClass}">
-                ${safeStatus}
+            <div class="project-meta">
+                <span class="project-status ${statusClass}">${safeStatus}</span>
+                <span class="project-kind">${kind}</span>
             </div>
-
-            <h3 class="project-title" translate="no">
-                ${safeTitle}
-            </h3>
-
-            <p class="project-description">
-                ${safeDescription}
-            </p>
-
-            <div class="project-stack" translate="no">
-                ${stack}
-            </div>
-
-            <div class="project-links" translate="no">
-                ${links}
-            </div>
-
+            <h3 class="project-title" translate="no">${safeTitle}</h3>
+            <p class="project-subtitle">${safeSubtitle}</p>
+            <p class="project-description">${safeDescription}</p>
+            <div class="project-stack" translate="no">${stack}</div>
+            <div class="project-links" translate="no">${links}</div>
         </div>
     `;
-
-    card.querySelector(".project-number").textContent =
-    String(projectIndex + 1).padStart(2, "0");
 
     projectsContainer.appendChild(card);
 }
@@ -360,6 +311,8 @@ function renderProjects() {
                project.category === activeFilter;
     });
 
+    let projectsShown = false; // рядом с остальными let
+
     if (filteredProjects.length === 0) {
         projectsContainer.textContent =
             allProjects.length === 0
@@ -369,9 +322,9 @@ function renderProjects() {
         return;
     }
 
-    filteredProjects.forEach((project, index) => {
-        createProjectCard(project, index);
-    });
+    filteredProjects.forEach(project => createProjectCard(project));
+    window.reveal(projectsContainer, !projectsShown);
+    projectsShown = true;
 }
 
 async function loadProjects() {
