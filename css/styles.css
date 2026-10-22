@@ -142,6 +142,8 @@ main > section { position: relative; }
 /* HERO */
 
 .hero {
+    --beam: 120deg; /* direction of the light ray, clockwise from up */
+    isolation: isolate; /* keeps ::before/::after above the body background */
     display: grid;
     grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
     align-items: center;
@@ -166,6 +168,27 @@ main > section { position: relative; }
     background-size: 64px 64px;
     mask-image: radial-gradient(ellipse 70% 70% at 70% 45%, #000, transparent 75%);
     -webkit-mask-image: radial-gradient(ellipse 70% 70% at 70% 45%, #000, transparent 75%);
+}
+
+/* Light ray from the top-left corner towards the opposite side */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: calc(var(--header-height) * -1);
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events: none;
+    background:
+        conic-gradient(from calc(var(--beam) - 7deg) at 0 0,
+            transparent 0deg, rgba(198, 255, 77, 0.10) 3.5deg, transparent 7deg),
+        conic-gradient(from calc(var(--beam) - 22deg) at 0 0,
+            transparent 0deg, rgba(198, 255, 77, 0.13) 22deg, transparent 44deg);
+    mask-image: radial-gradient(circle at 0 0, #000 0%, rgba(0, 0, 0, 0.55) 45%, transparent 85%);
+    -webkit-mask-image: radial-gradient(circle at 0 0, #000 0%, rgba(0, 0, 0, 0.55) 45%, transparent 85%);
+    animation: fade 1800ms 200ms both;
 }
 
 .hero h1 {
@@ -645,7 +668,8 @@ main > section { position: relative; }
     .navbar a { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
     .navbar a:last-child { border-bottom: 0; }
 
-    .hero { grid-template-columns: 1fr; padding-block: 40px 64px; }
+    .hero { --beam: 150deg; grid-template-columns: 1fr; padding-block: 40px 64px; }
+    .hero::after { filter: opacity(0.65); } /* ray is relatively stronger on a small screen */
     .hero-art { order: -1; width: min(100%, 220px); margin-inline: 0; }
     .hero-buttons .btn { flex: 1 1 140px; }
     .hero-meta { grid-template-columns: minmax(0, 1fr); }
