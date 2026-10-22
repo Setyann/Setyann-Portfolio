@@ -34,6 +34,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
+    overflow-x: clip;
     scroll-behavior: smooth;
     scroll-padding-top: calc(var(--header-height) + 16px);
     background: var(--bg);
@@ -41,7 +42,7 @@ html {
 
 body {
     min-width: 320px;
-    overflow-x: hidden;
+    overflow-x: clip;
     background: var(--bg);
     color: var(--text);
     font-family: var(--font);
@@ -152,7 +153,11 @@ main > section { position: relative; }
 .hero::before {
     content: "";
     position: absolute;
-    inset: 0 -50vw;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
     z-index: -1;
     opacity: 0.5;
     background-image:
@@ -213,12 +218,22 @@ main > section { position: relative; }
 .hero-art::before {
     content: "";
     position: absolute;
-    inset: -8%;
+    inset: 0;
     z-index: -1;
-    background: radial-gradient(circle, rgba(198, 255, 77, 0.07), transparent 62%);
+    background: radial-gradient(circle, rgba(198, 255, 77, 0.07), transparent 70%);
 }
 
-.hero-art svg { width: 100%; max-width: 480px; height: auto; margin-inline: auto; overflow: visible; }
+.hero-art { width: 100%; max-width: 480px; margin-inline: auto; aspect-ratio: 1; }
+
+/* each animated part is its own SVG layer, so the browser can move it on the GPU */
+.hero-art svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    shape-rendering: geometricPrecision;
+}
 
 .a-line { stroke: var(--line-strong); stroke-width: 1; }
 .a-faint { opacity: 0.5; }
@@ -229,9 +244,22 @@ main > section { position: relative; }
 .a-mini-top { fill: var(--accent); }
 .a-node { fill: var(--accent); }
 
-.a-ring { transform-box: fill-box; transform-origin: center; animation: spin 90s linear infinite; }
-.a-cube { animation: float 9s ease-in-out infinite alternate; }
-.a-mini { animation: float 7s ease-in-out infinite alternate-reverse; }
+.layer-ring { will-change: transform; animation: spin 120s linear infinite; }
+
+/* Small cube: y, x and tilt are separate animations with different periods,
+   so the motion drifts organically and never snaps or visibly loops.
+   The big cube is intentionally static. */
+.layer-mini {
+    --bob: -10px;
+    --sway: 5px;
+    --tilt: 4deg;
+    transform-origin: 78.8% 17.7%; /* centre of the small cube */
+    will-change: transform, translate, rotate;
+    animation:
+        bob 8s ease-in-out -3s infinite alternate-reverse,
+        sway 11s ease-in-out -6s infinite alternate,
+        tilt 13s ease-in-out -2s infinite alternate;
+}
 
 .hero-meta {
     grid-column: 1 / -1;
@@ -557,7 +585,9 @@ main > section { position: relative; }
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes spin { to { transform: rotate(360deg); } }
-@keyframes float { to { transform: translateY(-8px); } }
+@keyframes bob { from { translate: 0 0; } to { translate: 0 var(--bob); } }
+@keyframes sway { from { transform: translate3d(calc(var(--sway) * -1), 0, 0); } to { transform: translate3d(var(--sway), 0, 0); } }
+@keyframes tilt { from { rotate: calc(var(--tilt) * -1); } to { rotate: var(--tilt); } }
 @keyframes blink { to { visibility: hidden; } }
 
 .js [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
@@ -574,9 +604,8 @@ main > section { position: relative; }
     .header { padding-inline: 24px; }
 
     .hero { grid-template-columns: 1fr; min-height: auto; padding-block: 72px; }
-    .hero-art { order: -1; }
+    .hero-art { order: -1; width: min(100%, 300px); margin-inline: 0; }
     .hero-meta { gap: 16px; }
-    .hero-art svg { max-width: 300px; margin-inline: 0; }
 
     #projects,
     #about,
@@ -618,7 +647,7 @@ main > section { position: relative; }
     .navbar a:last-child { border-bottom: 0; }
 
     .hero { padding-block: 40px 64px; }
-    .hero-art svg { max-width: 220px; }
+    .hero-art { width: min(100%, 220px); }
     .hero-buttons .btn { flex: 1 1 140px; }
     .hero-meta { grid-template-columns: minmax(0, 1fr); }
 
