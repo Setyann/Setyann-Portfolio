@@ -14,7 +14,7 @@
         "links": {
             "demo": "https://setyann.github.io/ARVESSO/",
             "github": "https://github.com/Setyann/ARVESSO",
-            "apk": ""
+            "apk": null
         }
     },
     {
@@ -32,7 +32,7 @@
         "links": {
             "demo": "https://setyann.github.io/VEYRA/",
             "github": "https://github.com/Setyann/VEYRA",
-            "apk": ""
+            "apk": null
         }
     },
     {
@@ -50,7 +50,7 @@
         "links": {
             "demo": "https://setyann.github.io/TAVREN/",
             "github": "https://github.com/Setyann/TAVREN",
-            "apk": ""
+            "apk": null
         }
     },
     {
@@ -68,7 +68,7 @@
         "links": {
             "demo": "https://setyann.github.io/TOVENI/",
             "github": "https://github.com/Setyann/TOVENI",
-            "apk": ""
+            "apk": null
         }
     },
     {
@@ -84,7 +84,7 @@
         "status": "Maintained",
         "private": true,
         "links": {
-            "demo": "",
+            "demo": null,
             "github": "https://github.com/Setyann/Pulse",
             "apk": "https://github.com/Setyann/Pulse/releases/download/v1.1.1/pulse-v1.1.1.apk"
         }

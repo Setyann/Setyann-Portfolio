@@ -12,67 +12,102 @@
 
     <title translate="no">Setyann</title>
 
-    <link 
-        rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
+    <script>document.documentElement.classList.add("js");</script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
+        <a href="#" class="logo" translate="no">Setyann</a>
 
-        <a href="#" class="logo" translate="no">
-            Setyann
-        </a>
-
-        <nav class="navbar">
-            <a href="#about">About</a>
+        <nav class="navbar" id="navbar">
             <a href="#projects">Projects</a>
+            <a href="#about">About</a>
             <a href="#footer">Contact</a>
         </nav>
 
-        <button class="menu-toggle" aria-label="Open menu">
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navbar">
             <i class="fa-solid fa-bars"></i>
         </button>
-
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero -->
         <section id="hero" class="hero">
-            <h1>
-                Hi, I'm<span translate="no"> Setyann</span>
-            </h1>
+            <div class="hero-copy">
+                <h1>Software,<br><span>built independently.</span></h1>
+                <p class="hero-lead">Web and Android products, from idea to release.</p>
 
-            <h2>
-                I am an
-                <span id="role" translate="no">Independent Software Developer</span>
-            </h2>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#footer" class="btn btn-secondary">Contact</a>
+                </div>
+            </div>
 
-            <p>
-                I design and build web applications,
-                mobile software, and independent digital products.
-            </p>
+            <div class="hero-art" aria-hidden="true">
+                <svg viewBox="0 0 520 520" fill="none" stroke-linejoin="round">
+                    <path class="a-line" d="M8 40V8h32M480 8h32v32M512 480v32h-32M40 512H8v-32"/>
+                    <circle cx="260" cy="260" r="176" class="a-line a-faint"/>
+                    <g class="a-ring">
+                        <circle cx="260" cy="260" r="236" class="a-line" stroke-dasharray="2 9"/>
+                        <circle cx="260" cy="24" r="3" class="a-node"/>
+                    </g>
+                    <ellipse cx="260" cy="260" rx="236" ry="76" transform="rotate(-24 260 260)" class="a-line"/>
+                    <circle cx="475.6" cy="164" r="3.5" class="a-node"/>
+                    <polygon points="260,70 424,165 424,355 260,450 96,355 96,165" class="a-line"/>
+                    <path d="M260 140V70M364 200L424 165M364 320L424 355M260 380V450M156 320L96 355M156 200L96 165" class="a-line"/>
+                    <circle cx="260" cy="450" r="3" class="a-node"/>
+                    <circle cx="96" cy="165" r="3" class="a-node"/>
+                    <g class="a-cube">
+                        <polygon points="260,140 364,200 260,260 156,200" class="a-top"/>
+                        <polygon points="260,260 156,200 156,320 260,380" class="a-left"/>
+                        <polygon points="260,260 364,200 364,320 260,380" class="a-right"/>
+                        <polygon points="260,140 364,200 364,320 260,380 156,320 156,200" class="a-acc"/>
+                        <path d="M260 260L156 200M260 260L364 200M260 260V380" class="a-acc"/>
+                    </g>
+                    <g class="a-mini">
+                        <polygon points="410,64 434,78 410,92 386,78" class="a-mini-top"/>
+                        <polygon points="410,64 434,78 434,106 410,120 386,106 386,78" class="a-acc"/>
+                        <path d="M410 92L386 78M410 92L434 78M410 92V120" class="a-acc"/>
+                    </g>
+                </svg>
+            </div>
 
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#footer" class="btn btn-secondary">Contact</a>
+            <div class="hero-meta">
+                <div><span>Focus</span><p>Web · Android · Automation</p></div>
+                <div><span>Stack</span><p>HTML, CSS, JavaScript, Kotlin, Python</p></div>
+                <div><span>Status</span><p class="is-open">Open to opportunities</p></div>
             </div>
         </section>
 
+        <!-- Projects -->
+        <section id="projects">
+            <div class="section-head" data-reveal>
+                <h2 class="title">Selected projects</h2>
+                <p class="section-note">Live demos, concept sites and Android apps.</p>
+            </div>
 
-        <!-- About Section -->
+            <div class="project-filters" role="group" aria-label="Filter projects" data-reveal>
+                <button class="filter-btn active" data-filter="all" type="button" aria-pressed="true">All</button>
+                <button class="filter-btn" data-filter="web" type="button" aria-pressed="false">Web</button>
+                <button class="filter-btn" data-filter="mobile" type="button" aria-pressed="false">Mobile</button>
+            </div>
+
+            <div class="projects-content" id="projects-container"></div>
+        </section>
+
+        <!-- About -->
         <section id="about">
             <div class="about-content">
-                <div class="about-text">
-                    <h2>About Me</h2>
+                <div class="about-text" data-reveal>
+                    <h2>About &amp; approach</h2>
 
                     <p>
                         I'm an independent software developer with a
@@ -93,98 +128,56 @@
                         infrastructure, and security.
                     </p>
                 </div>
-            </div>
 
-            <div class="terminal" translate="no">
-                <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                <div class="terminal" translate="no" data-reveal>
+                    <div class="terminal-header">
+                        <div class="terminal-buttons"><span></span><span></span><span></span></div>
+                        <p>Terminal</p>
                     </div>
 
-                    <p>Terminal</p>
-                </div>
-
-
-                <div class="terminal-body">
-                    <div id="terminal-output"></div>
+                    <div class="terminal-body">
+                        <div id="terminal-output"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2 class="title">Projects</h2>
-
-            <div class="project-filters" role="group" aria-label="Filter projects">
-                <button class="filter-btn active" data-filter="all" type="button" aria-pressed="true">
-                    All
-                </button>
-
-                <button class="filter-btn" data-filter="web" type="button" aria-pressed="false">
-                    Web
-                </button>
-
-                <button class="filter-btn" data-filter="mobile" type="button" aria-pressed="false">
-                    Mobile
-                </button>
-            </div>
-
-            <div class="projects-content" id="projects-container"></div>
-        </section>
-
-        <!-- Testimonials Section -->
+        <!-- Testimonials -->
         <section id="testimonials" hidden>
             <h2 class="title">Testimonials</h2>
-
-            <p class="testimonials-subtitle">
-                Feedback from people I've worked with.
-            </p>
-
-            <div
-                class="testimonials-content"
-                id="testimonials-container"
-            ></div>
+            <p class="testimonials-subtitle">Feedback from people I've worked with.</p>
+            <div class="testimonials-content" id="testimonials-container"></div>
         </section>
-
     </main>
 
-    <!-- Footer -->
+    <!-- Contact -->
     <footer class="footer" id="footer">
-
         <div class="footer-content">
-
             <div class="footer-info">
                 <h2>Let's connect.</h2>
                 <p>Have a project or idea? Get in touch.</p>
             </div>
 
             <div class="footer-links">
-
-                <a href="https://github.com/Setyann" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/Setyann" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <i class="fa-brands fa-github"></i>
                 </a>
-
-                <a href="https://t.me/Setyann" target="_blank" aria-label="Telegram">
+                <a href="https://t.me/Setyann" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
                     <i class="fa-brands fa-telegram"></i>
                 </a>
-
-                <a href="mailto:aram.setyan1@gmail.com" target="_blank" aria-label="Email">
+                <a href="mailto:aram.setyan1@gmail.com" aria-label="Email">
                     <i class="fa-solid fa-envelope"></i>
                 </a>
-
             </div>
-
         </div>
 
         <div class="footer-bottom">
-            <span translate="no">&copy 2026 Setyann</span>
+            <span translate="no">&copy; 2026 Setyann</span>
             <span>Built with HTML · CSS · JavaScript</span>
         </div>
-
     </footer>
-    
+
+    <script src="js/fx.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
