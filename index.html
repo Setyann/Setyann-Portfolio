@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +19,26 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Standard favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+
+    <!-- SVG favicon for modern browsers -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <!-- Apple devices -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- PWA icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
 </head>
+
 <body>
     <header class="header">
         <a href="#" class="logo" translate="no">Setyann</a>
@@ -53,37 +69,44 @@
 
             <div class="hero-art" aria-hidden="true">
                 <svg viewBox="0 0 520 520" fill="none" stroke-linejoin="round">
-                    <path class="a-line" d="M8 40V8h32M480 8h32v32M512 480v32h-32M40 512H8v-32"/>
-                    <circle cx="260" cy="260" r="176" class="a-line a-faint"/>
+                    <path class="a-line" d="M8 40V8h32M480 8h32v32M512 480v32h-32M40 512H8v-32" />
+                    <circle cx="260" cy="260" r="176" class="a-line a-faint" />
                     <g class="a-ring">
-                        <circle cx="260" cy="260" r="236" class="a-line" stroke-dasharray="2 9"/>
-                        <circle cx="260" cy="24" r="3" class="a-node"/>
+                        <circle cx="260" cy="260" r="236" class="a-line" stroke-dasharray="2 9" />
+                        <circle cx="260" cy="24" r="3" class="a-node" />
                     </g>
-                    <ellipse cx="260" cy="260" rx="236" ry="76" transform="rotate(-24 260 260)" class="a-line"/>
-                    <circle cx="475.6" cy="164" r="3.5" class="a-node"/>
-                    <polygon points="260,70 424,165 424,355 260,450 96,355 96,165" class="a-line"/>
-                    <path d="M260 140V70M364 200L424 165M364 320L424 355M260 380V450M156 320L96 355M156 200L96 165" class="a-line"/>
-                    <circle cx="260" cy="450" r="3" class="a-node"/>
-                    <circle cx="96" cy="165" r="3" class="a-node"/>
+                    <ellipse cx="260" cy="260" rx="236" ry="76" transform="rotate(-24 260 260)" class="a-line" />
+                    <circle cx="475.6" cy="164" r="3.5" class="a-node" />
+                    <polygon points="260,70 424,165 424,355 260,450 96,355 96,165" class="a-line" />
+                    <path d="M260 140V70M364 200L424 165M364 320L424 355M260 380V450M156 320L96 355M156 200L96 165"
+                        class="a-line" />
+                    <circle cx="260" cy="450" r="3" class="a-node" />
+                    <circle cx="96" cy="165" r="3" class="a-node" />
                     <g class="a-cube">
-                        <polygon points="260,140 364,200 260,260 156,200" class="a-top"/>
-                        <polygon points="260,260 156,200 156,320 260,380" class="a-left"/>
-                        <polygon points="260,260 364,200 364,320 260,380" class="a-right"/>
-                        <polygon points="260,140 364,200 364,320 260,380 156,320 156,200" class="a-acc"/>
-                        <path d="M260 260L156 200M260 260L364 200M260 260V380" class="a-acc"/>
+                        <polygon points="260,140 364,200 260,260 156,200" class="a-top" />
+                        <polygon points="260,260 156,200 156,320 260,380" class="a-left" />
+                        <polygon points="260,260 364,200 364,320 260,380" class="a-right" />
+                        <polygon points="260,140 364,200 364,320 260,380 156,320 156,200" class="a-acc" />
+                        <path d="M260 260L156 200M260 260L364 200M260 260V380" class="a-acc" />
                     </g>
                     <g class="a-mini">
-                        <polygon points="410,64 434,78 410,92 386,78" class="a-mini-top"/>
-                        <polygon points="410,64 434,78 434,106 410,120 386,106 386,78" class="a-acc"/>
-                        <path d="M410 92L386 78M410 92L434 78M410 92V120" class="a-acc"/>
+                        <polygon points="410,64 434,78 410,92 386,78" class="a-mini-top" />
+                        <polygon points="410,64 434,78 434,106 410,120 386,106 386,78" class="a-acc" />
+                        <path d="M410 92L386 78M410 92L434 78M410 92V120" class="a-acc" />
                     </g>
                 </svg>
             </div>
 
             <div class="hero-meta">
-                <div><span>Focus</span><p>Web · Android · Automation</p></div>
-                <div><span>Stack</span><p>HTML, CSS, JavaScript, Kotlin, Python</p></div>
-                <div><span>Status</span><p class="is-open">Open to opportunities</p></div>
+                <div><span>Focus</span>
+                    <p>Web · Android · Automation</p>
+                </div>
+                <div><span>Stack</span>
+                    <p>HTML, CSS, JavaScript, Kotlin, Python</p>
+                </div>
+                <div><span>Status</span>
+                    <p class="is-open">Open to opportunities</p>
+                </div>
             </div>
         </section>
 
@@ -180,4 +203,5 @@
     <script src="js/fx.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
