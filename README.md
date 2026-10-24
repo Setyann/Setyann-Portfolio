@@ -1,48 +1,22 @@
-# Setyann Portfolio
+# Hi, I'm Setyann 👋
 
-Personal developer portfolio website showcasing my projects, skills, and experience.
+Independent software developer.
 
-🌐 Live Demo: https://setyann.github.io/Setyann-Portfolio/
+I build web applications and Android apps, and I'm learning about software architecture, security and infrastructure.
 
-## About
+## What I work on
 
-This portfolio was created to present my work in web and Android development.
+- Web: HTML, CSS, JavaScript
+- Android: Kotlin
+- Backend and databases: Supabase, PostgreSQL
+- Automation: Python, Telegram bots
 
-The website focuses on a clean developer-oriented design with a minimal interface, terminal-inspired elements, and project cards generated from structured data.
+## Portfolio
 
-## Features
+My selected projects, with live demos and source code:
+**https://setyann.github.io/**
 
-- Responsive design for desktop and mobile devices
-- Dynamic project cards from JSON data
-- Project status system:
-  - In Development
-  - Released
-  - Planned
-  - Paused
-- Conditional project links display
-- Terminal-style introduction section
-- Smooth scrolling navigation
-- Mobile navigation menu
+## Contact
 
-## Technologies
-
-- HTML5
-- CSS3
-- JavaScript
-- JSON
-
-## Design
-
-The design uses a dark developer-style interface with:
-- Inter font for UI
-- JetBrains Mono for code elements
-- Minimal animations
-- Teal accent color
-
-## Purpose
-
-The goal of this portfolio is to document my progress as a developer, showcase completed projects, and provide a simple way to explore my work.
-
-## License
-
-This project is for personal portfolio use.
+- Email: aram.setyan1@gmail.com
+- Telegram: [@Setyann](https://t.me/Setyann)
