@@ -4,7 +4,13 @@
         "category": "web",
         "subtitle": "QR menu and table ordering for restaurants.",
         "description": "A multi-language QR menu and table ordering system. Guests order from their table, staff follow orders on a live board, and owners edit the menu with two-factor protection. Data rules are enforced in the database and were tested on a test project. A pilot with real restaurants is planned.",
-        "stack": ["JavaScript", "Vite", "Supabase", "PostgreSQL"],
+        "stack": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Vite",
+            "PostgreSQL"
+        ],
         "status": "Testing",
         "private": false,
         "links": {
